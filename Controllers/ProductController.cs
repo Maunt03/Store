@@ -74,7 +74,7 @@ namespace Store.Controllers
 
             using var context = new AppDbContext();
             var record = from image in context.Images
-                         where image.Id == productId
+                         where image.ProductId == productId
                          select image;
 
             string name = record.First().Name;

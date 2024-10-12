@@ -22,10 +22,10 @@ namespace Store.Controllers
         public IActionResult Payment()
         {
             string userName = HttpContext.Request.Query["userName"];
-            int userId = Convert.ToInt32(GetId.GetUserId);
+            int userId = Convert.ToInt32(GetId.GetUserId(userName));
             if (userId == -1) return StatusCode(500);
             string productName = HttpContext.Request.Query["productName"];
-            int productId = Convert.ToInt32(GetId.GetProductId);
+            int productId = Convert.ToInt32(GetId.GetProductId(productName));
             if (productId == -1) return StatusCode(500);
             int productQuantityInOrder = Convert.ToInt32(HttpContext.Request.Query["productQuantityInOrder"]);
 
